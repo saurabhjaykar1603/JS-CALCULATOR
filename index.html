@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0px 0px;
+            padding: 0px 0px;
+
+        }
+
+        .container {
+            border: 2px solid black;
+            height: 422px;
+            width: 400px;
+            position: relative;
+            margin: 110px auto;
+            background-color: #808080;
+            border-radius: 10px;
+        }
+
+        .input {
+            border: 5px double black;
+            position: absolute;
+            top: 50px;
+            left: 10PX;
+            font-size: 47px;
+            font-family: xenara;
+            background-color: #e6ffe6;
+            width: 372px;
+        }
+
+        .logo-name {
+            font-size: 29px;
+            font-weight: bold;
+            position: absolute;
+            top: 8px;
+            left: 10px
+        }
+
+        .btn {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            position: relative;
+            top: 128px;
+
+        }
+
+        .btn-1 {
+            font-size: 27px;
+            height: 36px;
+            width: 56px;
+            border-radius: 10px;
+            margin: 6px;
+            border: none;
+            box-shadow: 2px 2px 2px 0px black;
+            cursor: pointer;
+        }
+
+        .non {
+            visibility: hidden;
+        }
+
+        .mx {
+            position: relative;
+            height: 88px;
+            font-size: 40px;
+        }
+
+        .top-up {
+            position: relative;
+            top: 78px;
+
+        }
+
+        .check {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .correct {
+            font-size: 9px;
+            font-weight: 900;
+        }
+
+        .auto {
+            font-size: 9px;
+            font-weight: 900;
+
+        }
+
+        .ac {
+            background-color: #31e63180;
+
+        }
+
+        .bg-gray {
+
+            background-color: #4d88ff;
+            color: #000000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <p class="logo-name">RTC</p>
+        <input type="text" class="input">
+
+        <div class="btn">
+            <button class="btn-1 check  bg-gray">CHECK</button>
+            <button class="btn-1 correct bg-gray">CORRECT DELET</button>
+            <button class="btn-1 bg-gray">GT</button>
+            <button class="btn-1 auto bg-gray">AUTO REPLAY</button>
+            <button class="btn-1 ac">AC</button>
+        </div>
+        <div class="btn">
+            <button class="btn-1">7</button>
+            <button class="btn-1">8</button>
+            <button class="btn-1">9</button>
+            <button class="btn-1">√</button>
+            <button class="btn-1">%</button>
+        </div>
+        <div class="btn">
+            <button class="btn-1">4</button>
+            <button class="btn-1">5</button>
+            <button class="btn-1">6</button>
+            <button class="btn-1">÷</button>
+            <button class="btn-1">*</button>
+        </div>
+        <div class="btn">
+            <button class="btn-1">1</button>
+            <button class="btn-1">2</button>
+            <button class="btn-1">3</button>
+            <button class="btn-1 mx">+</button>
+            <button class="btn-1">-</button>
+        </div>
+        <div class="btn top-up">
+            <button class="btn-1">.</button>
+            <button class="btn-1">0</button>
+            <button class="btn-1">00</button>
+            <button class="btn-1 non"></button>
+            <button class="btn-1">=</button>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
