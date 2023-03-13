@@ -58,6 +58,8 @@
             border: none;
             box-shadow: 2px 2px 2px 0px black;
             cursor: pointer;
+            transition: all 0.6s ease-in;
+
         }
 
         .non {
@@ -103,54 +105,81 @@
             color: #000000;
         }
 
+        #bg-red {
+            background-color: rgb(236, 2, 2);
+            color: white;
+            transition: all 0.6s ease-in-out;
+        }
+
+        #bg-red:hover {
+            background-color: rgb(255, 45, 45);
+            /* filter: box-shadow(2px 2px 1px black); */
+        }
+
+
         .btn-1:hover {
-            background-color: #87f2f2;
-            filter: drop-shadow(2px 2px 1px);
-            transition: 0.20s;
+            background-color: #75f8f8;
+            /* filter: drop-shadow(2px 2px 1px black); */
         }
     </style>
+    <script>
+        function handleClick(val) {
+            const inputBox = document.getElementById("Calculator-screen");
+            inputBox.value = (inputBox.value + val);
+        }
+        function clearScreen() {
+            const inputBox = document.getElementById("Calculator-screen");
+
+            inputBox.value = "";
+        }
+        function calculate() {
+            const inputBox = document.getElementById("Calculator-screen");
+const ans = eval(inputBox.value)
+            inputBox.value= ans;
+        }
+    </script>
 
 </head>
 
 <body>
     <div class="container">
         <p class="logo-name">RTC</p>
-        <input type="text" class="input">
+        <input type="text" class="input" id="Calculator-screen">
 
         <div class="btn">
-            <button class="btn-1 check  bg-gray">CHECK</button>
+            <button class="btn-1 check  bg-gray " id="bg-red" onclick="clearScreen()">CLEAR</button>
             <button class="btn-1 correct bg-gray">CORRECT DELET</button>
             <button class="btn-1 bg-gray">GT</button>
             <button class="btn-1 auto bg-gray">AUTO REPLAY</button>
             <button class="btn-1 ac">AC</button>
         </div>
         <div class="btn">
-            <button class="btn-1">7</button>
-            <button class="btn-1">8</button>
-            <button class="btn-1">9</button>
-            <button class="btn-1">√</button>
-            <button class="btn-1">%</button>
+            <button class="btn-1" onclick="handleClick(7)">7</button>
+            <button class="btn-1" onclick="handleClick(8)">8</button>
+            <button class="btn-1" onclick="handleClick(9)">9</button>
+            <button class="btn-1" onclick="handleClick('/')">/</button>
+            <button class="btn-1" onclick="handleClick('%')">%</button>
         </div>
         <div class="btn">
-            <button class="btn-1">4</button>
-            <button class="btn-1">5</button>
-            <button class="btn-1">6</button>
-            <button class="btn-1">÷</button>
-            <button class="btn-1">*</button>
+            <button class="btn-1" onclick="handleClick(4)">4</button>
+            <button class="btn-1" onclick="handleClick(5)">5</button>
+            <button class="btn-1" onclick="handleClick(6)">6</button>
+            <button class="btn-1" onclick="handleClick('÷')">÷</button>
+            <button class="btn-1" onclick="handleClick('*')">*</button>
         </div>
         <div class="btn">
-            <button class="btn-1">1</button>
-            <button class="btn-1">2</button>
-            <button class="btn-1">3</button>
-            <button class="btn-1 mx">+</button>
-            <button class="btn-1">-</button>
+            <button class="btn-1" onclick="handleClick(1)">1</button>
+            <button class="btn-1" onclick="handleClick(2)">2</button>
+            <button class="btn-1" onclick="handleClick(3)">3</button>
+            <button class="btn-1 mx" onclick="handleClick('+')">+</button>
+            <button class="btn-1" onclick="handleClick('-')">-</button>
         </div>
         <div class="btn top-up">
-            <button class="btn-1">.</button>
-            <button class="btn-1">0</button>
-            <button class="btn-1">00</button>
+            <button class="btn-1" onclick="handleClick('.')">.</button>
+            <button class="btn-1" onclick="handleClick(0)">0</button>
+            <button class="btn-1" onclick="handleClick('00')">00</button>
             <button class="btn-1 non"></button>
-            <button class="btn-1">=</button>
+            <button class="btn-1" onclick="calculate()">=</button>
         </div>
 
 
